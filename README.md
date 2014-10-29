@@ -8,5 +8,9 @@ Create simple scraping function useing phantomjs.
 
 test with
 ```
-phantomjs tryscrap.js
+phantomjs tryscraptiket.js
+````
+or
+```
+phantomjs tryscraptravel.js
 ````
