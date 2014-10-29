@@ -1,4 +1,4 @@
-phantomjs for scraping web
+phantomjs for web scraping
 ==============
 
 Create simple scraping function useing phantomjs.
