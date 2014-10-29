@@ -3,6 +3,8 @@ page.viewportSize = { width: 1920, height: 1080 };
 page.open('http://www.traveloka.com/fullsearch?ap=SOC.CGK&dt=30-10-2014.NA&ps=1.0.0', function() {
     page.includeJs("http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js", function() {
         var fs = require('fs');
+
+        //main function scraping
         var dom = page.evaluate(function() {
             var outa
             var panjang = $('.flightResultGenerated').length;
@@ -21,6 +23,7 @@ page.open('http://www.traveloka.com/fullsearch?ap=SOC.CGK&dt=30-10-2014.NA&ps=1.
             return nanana;
         });
 
+        //function dom for duping the object
         function dump(obj) {
             var out = '';
             for (var i in obj) {
@@ -29,16 +32,23 @@ page.open('http://www.traveloka.com/fullsearch?ap=SOC.CGK&dt=30-10-2014.NA&ps=1.
             console.log(out);
         }
 
-
+        //dump dom print to console
         dump(dom);
+
+        //create json data
         var data = {
             body: dom
         };
+
+        //print data to file
         var path = 'output.json';
         var content = JSON.stringify(data, null, 4);
         fs.write(path, content, 'w');
 
+
+        //try to render the page
         page.render('output.png');
+        console.log('lihat pada directori')
         phantom.exit();
     });
 });
