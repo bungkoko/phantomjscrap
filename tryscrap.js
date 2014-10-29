@@ -1,7 +1,17 @@
 var page = require('webpage').create();
-page.viewportSize = { width: 1920, height: 1080 };
-page.open('http://www.traveloka.com/fullsearch?ap=SOC.CGK&dt=30-10-2014.NA&ps=1.0.0', function() {
+page.viewportSize = {
+    width: 1920,
+    height: 1080
+};
+
+//cek finished or not
+page.onLoadFinished = function(status) {
+    console.log('Status: ' + status);
+};
+
+page.open('http://www.traveloka.com/fullsearch?ap=SOC.CGK&dt=05-11-2014.NA&ps=1.0.0', function() {
     page.includeJs("http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js", function() {
+
         var fs = require('fs');
 
         //main function scraping
@@ -44,8 +54,7 @@ page.open('http://www.traveloka.com/fullsearch?ap=SOC.CGK&dt=30-10-2014.NA&ps=1.
         var path = 'output.json';
         var content = JSON.stringify(data, null, 4);
         fs.write(path, content, 'w');
-
-
+        
         //try to render the page
         page.render('output.png');
         console.log('lihat pada directori')
