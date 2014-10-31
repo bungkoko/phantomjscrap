@@ -9,7 +9,7 @@ page.onLoadFinished = function(status) {
     console.log('Status: ' + status);
 };
 
-page.open('http://www.tiket.com/search/flight?d=SOC&a=CGK&date=2014-11-06&ret_date=&adult=1&child=0&infant=0&uid=', function() {
+page.open('http://www.tiket.com/search/flight?d=SOC&a=CGK&date=2014-11-28&ret_date=&adult=1&child=0&infant=0&uid=', function() {
     page.includeJs("http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js", function() {
 
         var fs = require('fs');
