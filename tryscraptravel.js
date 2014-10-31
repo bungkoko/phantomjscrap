@@ -6,8 +6,8 @@ page.viewportSize = {
 page.open('http://www.traveloka.com/fullsearch?ap=SOC.CGK&dt=28-11-2014.NA&ps=1.0.0', function() {
     page.includeJs("http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js", function() {
         //cek finished or not
-        page.onLoadFinished = function(status) {
-            console.log('Status: ' + status);
+        /*page.onLoadFinished = function(status) {
+            console.log('Status: ' + status);*/
             var fs = require('fs');
             //main function scraping
             var dom = page.evaluate(function() {
@@ -49,6 +49,6 @@ page.open('http://www.traveloka.com/fullsearch?ap=SOC.CGK&dt=28-11-2014.NA&ps=1.
             page.render('outputtravel.png');
             console.log('lihat pada directori')
             phantom.exit();
-        };
+       /* };*/
     });
 });
