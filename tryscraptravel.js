@@ -9,7 +9,7 @@ page2.onLoadFinished = function(status) {
     console.log('Status: ' + status);
 };
 
-page2.open('http://www.traveloka.com/fullsearch?ap=SOC.CGK&dt=05-11-2014.NA&ps=1.0.0', function() {
+page2.open('http://www.traveloka.com/fullsearch?ap=SOC.CGK&dt=28-11-2014.NA&ps=1.0.0', function() {
     page2.includeJs("http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js", function() {
 
         var fs = require('fs');
