@@ -6,8 +6,8 @@ page.viewportSize = {
 page.open('http://www.tiket.com/search/flight?d=SOC&a=CGK&date=2014-11-28&ret_date=&adult=1&child=0&infant=0&uid=', function() {
     page.includeJs("http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js", function() {
         //cek finished or not
-        page.onLoadFinished = function(status) {
-            console.log('Status: ' + status);
+       /* page.onLoadFinished = function(status) {
+            console.log('Status: ' + status);*/
             var fs = require('fs');
             //main function scraping
             var dom = page.evaluate(function() {
@@ -49,6 +49,6 @@ page.open('http://www.tiket.com/search/flight?d=SOC&a=CGK&date=2014-11-28&ret_da
             page.render('outputtiket.png');
             console.log('lihat pada directori')
             phantom.exit();
-        };
+      /*  };*/
     });
 });
